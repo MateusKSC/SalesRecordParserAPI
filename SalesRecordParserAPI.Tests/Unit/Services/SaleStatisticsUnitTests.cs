@@ -5,11 +5,12 @@ namespace SalesRecordParserAPI.Tests.Unit.Services
 {
     public class SaleStatisticsUnitTests
     {
+        private readonly IDataLoaderService _dataLoaderService;
 
         [Fact]
         public void SaleStatisticsService_GetMedianUnitCost_ReturnListOfSales()
         {
-            SaleStatisticsService saleStatisticsService = new SaleStatisticsService();
+            SaleStatisticsService saleStatisticsService = new SaleStatisticsService(_dataLoaderService);
             List<Sale> sales = new List<Sale>();
             Sale sale = new Sale();
             sales.Add(sale);
@@ -22,7 +23,7 @@ namespace SalesRecordParserAPI.Tests.Unit.Services
         [Fact]
         public void SaleStatisticsService_GetTotalRevenue_ReturnListOfSales()
         {
-            SaleStatisticsService saleStatisticsService = new SaleStatisticsService();
+            SaleStatisticsService saleStatisticsService = new SaleStatisticsService(_dataLoaderService);
             List<Sale> sales = new List<Sale>();
             Sale sale = new Sale();
             sales.Add(sale);
@@ -35,7 +36,7 @@ namespace SalesRecordParserAPI.Tests.Unit.Services
         [Fact]
         public void SaleStatisticsService_GetMostCommonRegion_ReturnListOfSales()
         {
-            SaleStatisticsService saleStatisticsService = new SaleStatisticsService();
+            SaleStatisticsService saleStatisticsService = new SaleStatisticsService(_dataLoaderService);
             List<Sale> sales = new List<Sale>();
             Sale sale = new Sale();
             sale.Region = "Europe";
@@ -49,7 +50,7 @@ namespace SalesRecordParserAPI.Tests.Unit.Services
         [Fact]
         public void SaleStatisticsService_GetDateInfo_ReturnValidDateInfo()
         {
-            SaleStatisticsService saleStatisticsService = new SaleStatisticsService();
+            SaleStatisticsService saleStatisticsService = new SaleStatisticsService(_dataLoaderService);
             SaleStatistics saleStatistics = new SaleStatistics();
             List<Sale> sales = new List<Sale>();
             Sale sale = new Sale();
