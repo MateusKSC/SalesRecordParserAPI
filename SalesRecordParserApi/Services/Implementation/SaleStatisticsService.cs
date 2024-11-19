@@ -6,7 +6,7 @@ namespace SalesRecordParserApi.Services
 {
     public class SaleStatisticsService : ISaleStatisticsService
     {
-        private DataLoaderService dataLoaderService = new DataLoaderService();
+        private readonly IDataLoaderService dataLoaderService = new DataLoaderService();
         public decimal GetMedianUnitCost(List<Sale> sales)
         {
             int middleNumber, unitCostQuantity = 0;

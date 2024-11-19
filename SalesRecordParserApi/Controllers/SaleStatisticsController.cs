@@ -7,7 +7,7 @@ namespace SalesRecordParserApi.Controllers
     [Route("[controller]")]
     public class SaleStatisticsController : ControllerBase
     {
-        ISaleStatisticsService saleStatisticsService = new SaleStatisticsService();
+        private readonly ISaleStatisticsService saleStatisticsService = new SaleStatisticsService();
 
         [HttpGet(Name = "GetSaleStatistics")]
         public IActionResult GetSaleStatistics()

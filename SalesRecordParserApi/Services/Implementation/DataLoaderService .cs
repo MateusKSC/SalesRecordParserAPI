@@ -10,7 +10,6 @@ namespace SalesRecordParserApi.Services
 {
     public class DataLoaderService : IDataLoaderService
     {
-
         public List<Sale> GetSalesInformation()
         {
             using (var streamReader = new StreamReader("SalesRecords.csv"))
