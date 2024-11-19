@@ -1,6 +1,0 @@
-@SalesRecordParserApi_HostAddress = http://localhost:5271
-
-GET {{SalesRecordParserApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

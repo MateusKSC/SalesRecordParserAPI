@@ -7,15 +7,12 @@ namespace SalesRecordParserApi.Controllers
     [Route("[controller]")]
     public class SaleStatisticsController : ControllerBase
     {
-        SaleStatisticsService saleStatisticsService = new SaleStatisticsServiceImpl();
+        ISaleStatisticsService saleStatisticsService = new SaleStatisticsService();
 
         [HttpGet(Name = "GetSaleStatistics")]
         public IActionResult GetSaleStatistics()
         {
             return Ok(saleStatisticsService.GetSaleStatistics());
         }
-        
-
-
     }
 }
